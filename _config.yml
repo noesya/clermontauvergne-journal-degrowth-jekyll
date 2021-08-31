@@ -1,0 +1,21 @@
+title: Template
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "volumes"
+    values:
+      layout: "volume"
+
+collections:
+  pages:
+    output: true
+  volumes:
+    output: true
+    permalink: /volumes/:name
