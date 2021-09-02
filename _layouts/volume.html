@@ -9,7 +9,12 @@ layout: default
   {% include breadcrumb.html %}
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-3">
+      {%- if page.image -%}
+        {% picture {{ page.image }} --alt {{ page.title }} --img class="img-fluid" %}
+      {%- endif -%}
+    </div>
+    <div class="col-md-5">
       {{ content }}
     </div>
     <div class="col-md-3 offset-md-1">
