@@ -1,4 +1,6 @@
 primary:
+  - title: Home
+    url: /
   - title: About
     url: /about
 legal:
