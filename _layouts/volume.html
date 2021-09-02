@@ -49,20 +49,21 @@ layout: default
       <h2>Table</h2>
       <ol class="list-unstyled">
         {%- for article in page.articles -%}
-        <li class="row flex-md-row-reverse">
-          <div class="col-md-4 text-md-end">
-            <small>Article</small>
-          </div>
-          <div class="col-md-8">
-            <h3>{{ article.title }}</h3>
-            <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
-            <div class="d-grid gap-2 d-md-block">
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#abstractModal">Abstract</button>
-              <button type="button" class="btn btn-secondary">PDF</button>
+          {%- assign modalId = "abstractModal_" | append: forloop.index0 -%}
+          <li class="row flex-md-row-reverse mt-4">
+            <div class="col-md-4 text-md-end">
+              <small>Article</small>
             </div>
-            {% include modal.html target="abstractModal" title="Title" content="Text" %}
-          </div>
-        </li>
+            <div class="col-md-8">
+              <h3>{{ article.title }}</h3>
+              <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
+              <div class="d-grid gap-2 d-md-block">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
+                <button type="button" class="btn btn-secondary">PDF</button>
+              </div>
+              {% include modal.html target=modalId title=article.title content="Text" %}
+            </div>
+          </li>
         {% endfor %}
       </ol>
     </div>
