@@ -1,6 +1,8 @@
-# Osuny Template
+# Degrowth journal
 
-Ce template Jekyll est la base de tous les sites Osuny.
+https://degrowthjournal.org/
+
+Jekyll site for the degrowth journal.
 
 ## Installation
 

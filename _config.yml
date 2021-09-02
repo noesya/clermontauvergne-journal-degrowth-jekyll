@@ -12,9 +12,21 @@ defaults:
   -
     scope:
       path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
       type: "volumes"
     values:
       layout: "volume"
+  -
+    scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
 
 collections:
   pages:
@@ -22,6 +34,9 @@ collections:
   volumes:
     output: true
     permalink: /volumes/:name
+  articles:
+    output: true
+    permalink: /articles/:name
 
 sass:
     style: compressed
