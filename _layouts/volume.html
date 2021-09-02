@@ -28,6 +28,7 @@ layout: default
           <dt>Langue</dt>
           <dd>
             {%- for tag in page.tags -%}
+              {% unless forloop.first %},{% endunless %}
               {{tag}}
             {%- endfor -%}
           </dd>
@@ -43,6 +44,11 @@ layout: default
           <dd>{{page.date}}</dd>
         {%- endif -%}
       </dl>
+    </div>
+    <div class="col-md-8">
+      <h2>Table</h2>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#abstractModal">Abstract</button>
+      {% include modal.html target="abstractModal" title="Title" content="Text" %}
     </div>
   </div>
 </div>
