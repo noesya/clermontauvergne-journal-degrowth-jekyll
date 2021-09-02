@@ -1,5 +1,14 @@
 ---
 title: Volumes
 permalink: /volumes
-layout: page
 ---
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for volume in site.volumes %}
+    <div class="col">
+      {% include volume.html %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
