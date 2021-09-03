@@ -4,9 +4,9 @@ primary:
   - title: About
     url: /about
 legal:
-  - title: Mentions légales
-    url: /mentions-legales
-  - title: Politique de confidentialité
-    url: /politique-de-confidentialite
-  - title: Gestion des cookies
-    url: /gestion-des-cookies
+  - title: Terms of use
+    url: /terms-of-use
+  - title: Privacy policy
+    url: /privacy-policy
+  - title: Cookie policy
+    url: /cookie-policy

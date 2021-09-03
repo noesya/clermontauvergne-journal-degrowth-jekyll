@@ -34,7 +34,7 @@
   </head>
   <body class="{{ page.path | remove: '.html' | remove: '_' | replace: '/', '__' }}">
     {% include header.html %}
-    <main class="main" aria-label="Content">
+    <main class="main container" aria-label="Content">
       {{ content }}
     </main>
     {% include footer.html %}
