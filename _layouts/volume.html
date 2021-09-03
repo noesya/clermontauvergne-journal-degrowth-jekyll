@@ -48,7 +48,8 @@ layout: default
     <div class="col-md-8">
       <h2>Table</h2>
       <ol class="list-unstyled">
-        {%- for article in page.articles -%}
+        {%- for articleId in page.articles -%}
+          {%- assign article = site.articles | where:"slug", articleId | first -%}
           {%- assign modalId = "abstractModal_" | append: forloop.index0 -%}
           <li class="row flex-md-row-reverse mt-4">
             <div class="col-md-4 text-md-end">
@@ -61,7 +62,7 @@ layout: default
                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
                 <button type="button" class="btn btn-secondary">PDF</button>
               </div>
-              {% include modal.html target=modalId title=article.title content="Text" %}
+              {% include modal.html target=modalId title=article.title content=article.content %}
             </div>
           </li>
         {% endfor %}
