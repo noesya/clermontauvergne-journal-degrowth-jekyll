@@ -1,10 +1,12 @@
 ---
-title: Home
+title: The reference journal about post-growth and degrowth
+description:
 permalink: /
 ---
 
 <div class="row row-cols-1 row-cols-md-3">
-    {% for volume in site.volumes %}
+    {% assign volumes = site.volumes | sort: "number" | reverse %}
+    {% for volume in volumes | limit: 3 %}
         <div class="col">
           {% include volume.html %}
         </div>

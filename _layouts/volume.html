@@ -7,64 +7,66 @@ layout: default
 
 {% include breadcrumb.html %}
 
+<div class="row mb-5">
+    <div class="col-md-3">
+      {%- if page.image -%}
+        {% picture {{ page.image }} --alt {{ page.title }} --img class="img-fluid" %}
+      {%- endif -%}
+    </div>
+    <div class="col-md-5">
+      {{ content }}
+    </div>
+    <div class="col-md-3 offset-md-1">
+      <dl>
+        {%- if page.issn -%}
+          <dt>ISSN</dt>
+          <dd>{{page.issn}}</dd>
+        {%- endif -%}
+
+        {%- if page.tags -%}
+          <dt>Langue</dt>
+          <dd>
+            {%- for tag in page.tags -%}
+              {% unless forloop.first %},{% endunless %}
+              {{tag}}
+            {%- endfor -%}
+          </dd>
+        {%- endif -%}
+
+        {%- if page.lang -%}
+          <dt>Langue</dt>
+          <dd>{{page.lang}}</dd>
+        {%- endif -%}
+
+        {%- if page.date -%}
+          <dt>Date</dt>
+          <dd>{{page.date}}</dd>
+        {%- endif -%}
+      </dl>
+    </div>
+</div>
 <div class="row">
-<div class="col-md-3">
-  {%- if page.image -%}
-    {% picture {{ page.image }} --alt {{ page.title }} --img class="img-fluid" %}
-  {%- endif -%}
-</div>
-<div class="col-md-5">
-  {{ content }}
-</div>
-<div class="col-md-3 offset-md-1">
-  <dl>
-    {%- if page.issn -%}
-      <dt>ISSN</dt>
-      <dd>{{page.issn}}</dd>
-    {%- endif -%}
-
-    {%- if page.tags -%}
-      <dt>Langue</dt>
-      <dd>
-        {%- for tag in page.tags -%}
-          {% unless forloop.first %},{% endunless %}
-          {{tag}}
-        {%- endfor -%}
-      </dd>
-    {%- endif -%}
-
-    {%- if page.lang -%}
-      <dt>Langue</dt>
-      <dd>{{page.lang}}</dd>
-    {%- endif -%}
-
-    {%- if page.date -%}
-      <dt>Date</dt>
-      <dd>{{page.date}}</dd>
-    {%- endif -%}
-  </dl>
-</div>
-<div class="col-md-8">
-  <h2>Table</h2>
-  <ol class="list-unstyled">
-    {%- for articleId in page.articles -%}
-      {%- assign article = site.articles | where:"slug", articleId | first -%}
-      {%- assign modalId = "abstractModal_" | append: forloop.index0 -%}
-      <li class="row flex-md-row-reverse mt-4">
-        <div class="col-md-4 text-md-end">
-          <small>Article</small>
-        </div>
-        <div class="col-md-8">
-          <h3>{{ article.title }}</h3>
-          <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
-          <div class="d-grid gap-2 d-md-block">
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
-            <button type="button" class="btn btn-secondary">PDF</button>
-          </div>
-          {% include modal.html target=modalId title=article.title content=article.content %}
-        </div>
-      </li>
-    {% endfor %}
-  </ol>
-</div>
+    <div class="col-md-8">
+      <h2>Table</h2>
+      <ol class="list-unstyled">
+        {%- for articleId in page.articles -%}
+          {%- assign article = site.articles | where:"slug", articleId | first -%}
+          {%- assign modalId = "abstractModal_" | append: forloop.index0 -%}
+          <li class="row flex-md-row-reverse mt-4">
+            <div class="col-md-4 text-md-end">
+              <small>Article</small>
+            </div>
+            <div class="col-md-8">
+              <h3>{{ article.title }}</h3>
+              <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
+              <div class="d-grid gap-2 d-md-block">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
+                <button type="button" class="btn btn-secondary">PDF</button>
+              </div>
+              {% include modal.html target=modalId title=article.title content=article.content %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
 </div>
