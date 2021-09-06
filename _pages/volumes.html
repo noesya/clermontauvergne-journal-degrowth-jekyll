@@ -4,6 +4,8 @@ description: In non vulputate ligula. Etiam posuere arcu magna, ac suscipit enim
 permalink: /volumes
 ---
 
+{% include breadcrumb.html %}
+
 <div class="row row-cols-1 row-cols-md-3">
   {% assign volumes = site.volumes | sort: "number" | reverse %}
   {% for volume in site.volumes %}
