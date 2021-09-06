@@ -3,4 +3,60 @@ layout: default
 ---
 
 <h1>{{ page.title }}</h1>
-{{ content }}
+
+{% include breadcrumb.html %}
+
+<div class="row mb-5">
+    <div class="col-md-8">
+      <div class="mb-5">
+        {{ content }}
+      </div>
+
+      <h2>Auteurs</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">Anika Gauja</p>
+          <p class="small">Anika Gauja is a Professor in the Department of Government and International Relations, Sydney University. She is the author of Party reform: The causes, challenges and consequences of organizational change (2017, OUP).<br>
+            Email: anika.gauja AT sydney.edu.au</p>
+        </div>
+        <div class="col-md-6">
+          <p class="mb-0">Karina Kosiara-Pedersen</p>
+          <p class="small">Karina Kosiara-Pedersen is Associate Professor in the Department of Political Science, University of Copenhagen. She is the author of Demokratiets ildsjæle [Democracy’s fiery souls] and co-editor of Nordic party members: Linkages in troubled times.<br>
+            Email: kp AT ifs.ku.dk</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 offset-md-1">
+      <dl>
+        {%- if page.type -%}
+          <dt>Nature</dt>
+          <dd>{{page.type}}</dd>
+        {%- endif -%}
+
+        {%- if page.tags -%}
+          <dt>Mot-clés</dt>
+          <dd>
+            {%- for tag in page.tags -%}
+              {% unless forloop.first %},{% endunless %}
+              {{tag}}
+            {%- endfor -%}
+          </dd>
+        {%- endif -%}
+
+        {%- if page.lang -%}
+          <dt>PDF</dt>
+          <dd><a href="{{page.pdf}}" target="_blank">{{page.pdf}}</a></dd>
+        {%- endif -%}
+
+        {%- if page.lang -%}
+          <dt>Langue</dt>
+          <dd>{{page.year}}</dd>
+        {%- endif -%}
+
+        {%- if page.date -%}
+          <dt>Date</dt>
+          <dd>{{page.date | date: "%d/%m/%Y"}}</dd>
+        {%- endif -%}
+      </dl>
+    </div>
+</div>
