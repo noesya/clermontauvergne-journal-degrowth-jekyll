@@ -4,12 +4,12 @@ permalink: "/"
 parent: ""
 description: "this is a test with a &quot;quote&quot; and accentués"
 ---
-&lt;div class=&quot;row row-cols-1 row-cols-md-3&quot;&gt;
-    {% assign volumes = site.volumes | sort: &quot;number&quot; | reverse %}
-    {% for volume in volumes | limit: 3 %}
-        &lt;div class=&quot;col&quot;&gt;
-          {% include volume.html %}
-        &lt;/div&gt;
-    {% endfor %}
-&lt;/div&gt;
 
+<div class="row row-cols-1 row-cols-md-3">
+    {% assign volumes = site.volumes | sort: "number" | reverse %}
+    {% for volume in volumes | limit: 3 %}
+        <div class="col">
+          {% include volume.html %}
+        </div>
+    {% endfor %}
+</div>
