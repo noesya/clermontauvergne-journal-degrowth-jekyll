@@ -1,0 +1,15 @@
+---
+title: "IUT Bordeaux Montaigne"
+permalink: "/"
+parent: ""
+description: "this is a test with a &quot;quote&quot; and accentués"
+---
+<div class="row row-cols-1 row-cols-md-3">
+    {% assign volumes = site.volumes | sort: "number" | reverse %}
+    {% for volume in volumes | limit: 3 %}
+        <div class="col">
+          {% include volume.html %}
+        </div>
+    {% endfor %}
+</div>
+
