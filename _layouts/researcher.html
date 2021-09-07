@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+{% include breadcrumb.html %}
+
+<div class="row">
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="ps-0">Article</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in site.articles %}
+                    {% assign volume = site.volumes | where:"slug", article.volume | first -%}
+                    <tr>
+                        <td class="ps-0"><a href="{{ article.url }}">{{ article.title }}</a></td>
+                        <td><a href="{{ volume.url }}">{{ volume.title }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="offset-md-1 col-md-3">
+        <p>
+            {{ page.biography }}
+        </p>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="row">
+<div class="row mb-5">
   <div class="col-md-8">
     <h1 class="mb-0">{{ page.title }}</h1>
     <p class="mb-5">Volume {{page.number}}</p>
@@ -64,8 +64,14 @@ layout: default
             </div>
             <div class="col-md-8">
               <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-              <p>Emil Husted Mona Moufahim Martin Fredriksson</p>
+              <p>
+                 {% for researcher_id in article.authors %}
+                    {% assign researcher = site.researchers | where:"slug", researcher_id | first %}
+                    {{ researcher.title }}
+                 {% endfor %}
+              </p>
               <div class="d-grid gap-2 d-md-block">
+                <a type="button" class="btn btn-secondary me-md-1" href="{{ article.url }}">Read</a>
                 <button type="button" class="btn btn--eye btn-secondary me-md-1" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
                 <button type="button" class="btn btn--download btn-secondary">PDF</button>
               </div>

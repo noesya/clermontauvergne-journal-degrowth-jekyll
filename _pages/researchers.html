@@ -1,0 +1,16 @@
+---
+title: Researchers
+description: ""
+permalink: /researchers
+---
+
+{% include breadcrumb.html %}
+
+<div class="row row-cols-1 row-cols-md-4">
+  {% assign researchers = site.researchers | sort: "last_name" %}
+  {% for researcher in researchers %}
+    <div class="col">
+      <a href="{{ researcher.url }}">{{ researcher.title }}</a>
+    </div>
+  {% endfor %}
+</div>
