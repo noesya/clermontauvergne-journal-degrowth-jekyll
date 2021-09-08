@@ -5,7 +5,7 @@
         <h2>
             <a href="{{ researcher.url }}">{{ researcher.title }}</a>
         </h2>
-        <p class="small">{{ researcher.biography }}</p>
+        <p class="small">{{ researcher.biography | truncate: 300}}</p>
     </div>
   {% endfor %}
 </div>
