@@ -75,7 +75,7 @@ layout: default
                 <button type="button" class="btn btn--eye btn-secondary me-md-1" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
                 <button type="button" class="btn btn--download btn-secondary">PDF</button>
               </div>
-              {% include modal.html target=modalId title=article.title content=article.content %}
+              {% include modal.html target=modalId title=article.title content=article.abstract %}
             </div>
           </li>
         {% endfor %}
