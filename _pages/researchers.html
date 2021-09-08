@@ -10,7 +10,10 @@ permalink: /researchers
   {% assign researchers = site.researchers | sort: "last_name" %}
   {% for researcher in researchers %}
     <div class="col">
-      <a href="{{ researcher.url }}">{{ researcher.title }}</a>
+        <h2>
+            <a href="{{ researcher.url }}">{{ researcher.title }}</a>
+        </h2>
+        <p class="small">{{ researcher.biography }}</p>
     </div>
   {% endfor %}
 </div>
