@@ -6,7 +6,7 @@ permalink: /volumes
 
 {% include breadcrumb.html %}
 
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-1 row-cols-md-2">
   {% assign volumes = site.volumes | sort: "number" | reverse %}
   {% for volume in volumes %}
     <div class="col">
