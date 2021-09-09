@@ -1,6 +1,10 @@
 primary:
   - title: Home
     url: /
+  - title: Volumes
+    url: /volumes
+  - title: Researchers
+    url: /researchers
   - title: About
     url: /about
 legal:

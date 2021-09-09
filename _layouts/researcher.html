@@ -2,25 +2,21 @@
 layout: page
 ---
 
-{% include breadcrumb.html %}
-
 <div class="row">
-    <div class="col-md-8">
-        {% for article in site.articles | where: "slug", article.authors %}
-            {% for author in article.authors %}
+    <div class="col-md-4">
+        <p>{{ page.biography }}</p>
+    </div>
+    <div class="offset-md-1 col-md-7">
+        {% for current_article in site.articles %}
+            {% assign volume = site.volumes | where: "slug", current_article.volume | first %}
+            {% for author in current_article.authors %}
                 {% if author == page.slug %}
-                    {% assign volume = site.volumes | where:"slug", article.volume | first -%}
                     <article class="mb-5">
-                        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                        <h2><a href="{{ current_article.url }}">{{current_article.title }}</a></h2>
                         <p>In “<a href="{{ volume.url }}">{{ volume.title }}</a>”</p>
                     </article>
                 {% endif %}
             {% endfor %}
         {% endfor %}
-    </div>
-    <div class="offset-md-1 col-md-3">
-        <p>
-            {{ page.biography }}
-        </p>
     </div>
 </div>

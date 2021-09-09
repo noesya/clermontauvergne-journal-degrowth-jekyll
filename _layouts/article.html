@@ -21,13 +21,13 @@ layout: default
           <div class="row">
             {% for author_id in page.authors %}
               {%- assign author = site.researchers | where:"slug", author_id | first -%}
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3">
                   <p class="mb-0">
                       <a href="{{ author.url }}">
                           {{ author.first_name }} {{ author.last_name }}
                       </a>
                   </p>
-                  <p class="small">{{ author.biography }}</p>
+                  <p class="small">{{ author.biography | truncate: 300 }}</p>
                 </div>
             {% endfor %}
           </div>
