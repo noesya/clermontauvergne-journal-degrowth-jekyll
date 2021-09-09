@@ -1,6 +1,6 @@
 <a href="{{ volume.url }}" class="card">
   {%- if volume.image -%}
-    {% picture {{ volume.image }} --alt {{ volume.title }} --img class="card-img-top img-fluid" %}
+    {% picture {{ volume.image }} --alt {{ volume.title }} --img class="card-img-top img-fluid" loading="lazy" %}
   {%- endif -%}
   <div class="card-body">
     <p class="card-subtitle">Volume {{ volume.number }}</p>
