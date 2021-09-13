@@ -8,30 +8,29 @@
         color: $black
 
     body
-        background-color: $white
+        background-color: $black
 
     body,
     a,
     .nav-link,
-    .navbar-dark .navbar-nav .nav-link
-        color: $black
+    .navbar-nav .nav-link
+        color: $white
 
     a,
     .nav-link,
-    .navbar-dark .navbar-nav .nav-link
+    .navbar-nav .nav-link
         &:hover,
         &:focus
-            color: $gray-700
+            color: $gray-300
 
-    .navbar-dark
-        .navbar-toggler:focus
+    .navbar
+        &-toggler:focus
             box-shadow: none
-        .navbar-toggler-icon
-            filter: invert(1)
-
-    .navbar-brand
-        img
-            filter: invert(1)
+        &-toggler-icon
+            filter: invert(0)
+        &-brand
+            img
+                filter: invert(0)
 
     .footer
-        background-color: $gray-200
+        background-color: $dark
