@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="row mb-5">
+<div class="row mb-md-5">
   <div class="col-md-8">
     <h1 class="mb-0">{{ page.title }}</h1>
     <p class="mb-5">Volume {{page.number}}</p>
@@ -12,7 +12,7 @@ layout: default
 {% include breadcrumb.html %}
 
 <div class="row mb-5">
-    <div class="col-md-3">
+    <div class="col-md-4 col-lg-3 mb-2">
       {%- if page.image -%}
         {% picture {{ page.image }} --alt {{ page.title }} --img class="img-fluid" loading="lazy" %}
       {%- endif -%}
@@ -20,7 +20,7 @@ layout: default
     <div class="col-md-5">
       {{ content }}
     </div>
-    <div class="col-md-3 offset-md-1">
+    <div class="col-md-3 offset-lg-1">
       <dl>
         {%- if page.issn -%}
           <dt>ISSN</dt>
@@ -70,9 +70,9 @@ layout: default
                     {{ researcher.title }}
                  {% endfor %}
               </p>
-              <div class="d-grid gap-2 d-md-block">
-                <a type="button" class="btn btn-secondary me-md-1" href="{{ article.url }}">Read</a>
-                <button type="button" class="btn btn--eye btn-secondary me-md-1" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
+              <div class="d-grid gap-2 d-lg-block">
+                <a type="button" class="btn btn-secondary me-lg-1" href="{{ article.url }}">Read</a>
+                <button type="button" class="btn btn--eye btn-secondary me-lg-1" data-bs-toggle="modal" data-bs-target="#{{modalId}}">Abstract</button>
                 <button type="button" class="btn btn--download btn-secondary">PDF</button>
               </div>
               {% include modal.html target=modalId title=article.title content=article.abstract %}
