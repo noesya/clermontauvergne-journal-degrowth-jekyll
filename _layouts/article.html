@@ -35,12 +35,14 @@ layout: default
         <section class="mb-5">
           {{ content }}
         </section>
-        <section class="mb-5">
-            <h2>References</h2>
-            <p>
-                {{ page.references | newline_to_br }}
-            </p>
-        </section>
+        {% if page.references != "" %}
+            <section class="mb-5">
+                <h2>References</h2>
+                <p>
+                    {{ page.references | newline_to_br }}
+                </p>
+            </section>
+        {% endif %}
     </div>
     <div class="col-md-3 offset-md-1">
       <dl>
@@ -49,14 +51,9 @@ layout: default
           <dd>{{page.type}}</dd>
         {%- endif -%}
 
-        {%- if page.tags -%}
+        {%- if page.keywords -%}
           <dt>Mot-clés</dt>
-          <dd>
-            {%- for tag in page.tags -%}
-              {% unless forloop.first %},{% endunless %}
-              {{tag}}
-            {%- endfor -%}
-          </dd>
+          <dd>{{ page.keywords }}</dd>
         {%- endif -%}
 
         {%- if page.pdf -%}
