@@ -2,20 +2,22 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mb-4">
-        <a href="/">{{site.title}}</a>
+          <a class="navbar-brand" href="/">
+              <img src="/assets/svg/logo.svg" alt="{{site.title}}" width="140">
+          </a>
       </div>
       <div class="col-md-6">
         <ul class="nav nav--primary flex-column align-items-md-end mb-4">
         {% for item in site.data.menus.primary %}
           <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+            <a href="{{ item.url }}" class="nav-link px-0">{{ item.title }}</a>
           </li>
         {% endfor %}
         </ul>
         <ul class="nav nav--legal flex-column align-items-md-end">
         {% for item in site.data.menus.legal %}
           <li class="nav-item">
-            <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+            <a href="{{ item.url }}" class="nav-link px-0">{{ item.title }}</a>
           </li>
         {% endfor %}
         </ul>
