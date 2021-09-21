@@ -28,18 +28,8 @@ layout: default
         {%- endif -%}
 
         {%- if page.tags -%}
-          <dt>Mot-clés</dt>
-          <dd>
-            {%- for tag in page.tags -%}
-              {% unless forloop.first %},{% endunless %}
-              {{tag}}
-            {%- endfor -%}
-          </dd>
-        {%- endif -%}
-
-        {%- if page.lang -%}
-          <dt>Langue</dt>
-          <dd>{{page.lang}}</dd>
+          <dt>Keywords</dt>
+          <dd>{{ page.keywords }}</dd>
         {%- endif -%}
 
         {%- if page.date -%}
