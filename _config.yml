@@ -31,9 +31,9 @@ defaults:
   -
     scope:
       path: ""
-      type: "researchers"
+      type: "authors"
     values:
-      layout: "researcher"
+      layout: "author"
 
 collections:
   pages:
@@ -44,9 +44,9 @@ collections:
   articles:
     output: true
     permalink: /articles/:name
-  researchers:
+  authors:
     output: true
-    permalink: /researchers/:name
+    permalink: /authors/:name
 
 sass:
     style: compressed

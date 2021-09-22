@@ -3,8 +3,8 @@ primary:
     url: /
   - title: Volumes
     url: /volumes
-  - title: Researchers
-    url: /researchers
+  - title: Authors
+    url: /authors
   - title: About
     url: /about
 legal:

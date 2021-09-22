@@ -1,0 +1,11 @@
+<div class="row row-cols-1 row-cols-md-4">
+  {% assign authors = site.authors | sort: "last_name" %}
+  {% for author in authors %}
+    <div class="col">
+        <h2>
+            <a href="{{ author.url }}">{{ author.title }}</a>
+        </h2>
+        <p class="small">{{ author.biography | truncate: 300}}</p>
+    </div>
+  {% endfor %}
+</div>

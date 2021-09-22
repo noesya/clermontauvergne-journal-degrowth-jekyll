@@ -20,7 +20,7 @@ layout: default
       <h2>Authors</h2>
       <div class="row">
         {% for author_id in page.authors %}
-        {%- assign author = site.researchers | where:"slug", author_id | first -%}
+        {%- assign author = site.authors | where:"slug", author_id | first -%}
         <div class="col-md-6 mb-3">
           <p class="mb-0">
             <a href="{{ author.url }}">
