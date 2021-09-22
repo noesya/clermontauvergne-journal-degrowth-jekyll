@@ -11,9 +11,12 @@ layout: default
 
 {% include breadcrumb.html %}
 
-<div class="row">
-    <div class="col-md-8">
-        {{ page.text }}
-        {{ content }}
+{% if page.text %}
+    <div class="row">
+        <div class="col-md-8">
+            {{ page.text }}
+        </div>
     </div>
-</div>
+{% endif %}
+
+{{ content }}
